@@ -1,0 +1,541 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+
+  <title>Internet Services Provider</title>
+  <style>
+    *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 26px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	font-size:16px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4f8ff7;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 26px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+	font-size:20px;
+}
+button:hover {
+    opacity: 0.8;
+}
+h1{
+font-size: 34px;
+    font-family: inherit;
+    color: #999999;
+}
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+.avatar {
+    width: 200px;
+	height:200px;
+    border-radius: 50%;
+}
+
+/* The Modal (background) */
+.modal {
+	display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 40%; 
+	padding-bottom: 30px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #4f8ff7;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    animation: zoom 0.6s
+}
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+
+
+/* Drop Down menu */
+.dropCat1{  
+    padding-left: 27px;
+    font-size: larger;
+    color: #999999;
+}
+
+
+#category{
+    color: #616161;
+    font-size: larger;
+    margin-bottom: 17px;
+    margin-top: 15px;
+
+}
+
+
+.field-icon {
+    float: right;
+    margin-right: 40px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .container{
+    padding-top:50px;
+    margin: auto;
+  }
+
+
+</style>
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<body onload="javascript:myfun()">
+
+<script type="text/javascript">
+{% comment %} function myFunction() {
+  alert("Registration Successful!");
+} {% endcomment %}
+
+{% comment %} function myFunction2() {
+    alert("You'll be redirected to another page, if not type the correct email and password again!")
+} {% endcomment %}
+
+{% comment %} function showAlert(){
+  if($("#myAlert").find("div#myAlert2").length==0){
+    $("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button> Success! message sent successfully.</div>");
+  }
+  $("#myAlert").css("display", "");
+}  {% endcomment %}
+
+function myfun(){
+var name = "signup" + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  var res="";
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      res= c.substring(name.length, c.length);
+    }
+  }
+  if (res=="0"){
+    alert("The email is already used ..please try again")
+    document.cookie = "signup=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+  if (res=="1"){
+    alert("Registered successfully")
+    document.cookie = "signup=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+  if (res=="2"){
+    alert("Login failed ..wrong username or password")
+    document.cookie = "signup=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }}
+  myfun()
+</script>
+
+
+
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Internet Services Provider</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a href="/" class="mr-8 hover:text-gray-900">Home</a>
+        <a class="mr-8 hover:text-gray-900">Services</a>
+        <a class="mr-8 hover:text-gray-900">About Us</a>
+        <a class="mr-8  hover:text-gray-900">Contact Us</a>
+      </nav>
+      
+    </div>
+  </header>
+
+
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Find the best wifi plans 
+        <br class="hidden lg:inline-block">with best offers
+      </h1>
+      <p class="mb-8 leading-relaxed">Here you will find best wifi plan and you can explore more on it. Due to work from internet has become a major concern and demand of the internet is also very high, here we recomand you best wifi plan for your better internet connectivity </p>
+      <div class="flex justify-center">
+        <button onclick="document.getElementById('modal-login').style.display='block'" class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Login</button>
+        <button onclick="document.getElementById('modal-register').style.display='block'" class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Register</button>
+      </div>
+    </div>
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded" alt="hero" src="https://source.unsplash.com/720x600/?wifi">   
+        <!-- <img class="object-cover object-center rounded" alt="hero" src="./photos/comp1.jpg"> -->
+        <!-- <video width="320" height="240" autoplay loop>
+      <source src="./videos/repairing1.mp4" type="video/mp4">
+     </video>   -->
+    </div>
+  </div>
+
+  <!-- PopUp form for login form -->
+  <div id="modal-login" class="modal">
+  
+    <form class="modal-content animate" method="post" action="/login">
+    {% csrf_token %} 
+
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('modal-login').style.display='none'" class="close" title="Close PopUp">&times;</span>
+        <h1 style="text-align:center">LogIn</h1>
+      </div>
+  
+      <div class="container">
+        <input type="text" placeholder="Enter email" name="email" required>
+        <input id="password-field1" placeholder="Enter Password" type="password"  class="form-control" name="password" required>
+        <span toggle="#password-field1" class="fa fa-lg fa-eye field-icon toggle-password1"></span>        
+        <button type="submit" name="loginBtn">Login</button>
+        <input type="checkbox" style="margin:26px 30px;"> Remember me      
+        <!--<a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a> -->
+          
+      </div>
+
+    </form>
+    
+  </div>
+
+<!-- PopUp form for Registration  form -->
+<div id="modal-register" class="modal">
+  <form class="modal-content animate" method="post" action="/home">
+  {% csrf_token %} 
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('modal-register').style.display='none'" class="close" title="Close PopUp">&times;</span>
+      <h1 style="text-align:center">Registration</h1>
+    </div>
+
+    <div class="container">
+      <input type="text" placeholder="Enter Name" name="name" required>
+      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="text" placeholder="Enter Mobile" name="mobile" required>
+      
+      <!-- <input type="password" id="password" placeholder="Enter Password" name="psw" required>    
+      <i class="far fa-eye" id="togglePassword"></i> -->
+
+      <input id="password-field" placeholder="Enter Password" type="password"  class="form-control" name="password" required>
+      <span toggle="#password-field" class="fa fa-lg fa-eye field-icon toggle-password"></span>
+  
+            
+    
+  
+  </select>
+      <button type="submit" onclick="myFunction()" name="reg" >Register</button>
+      
+      
+    </div>
+    
+  </form>
+  
+</div>
+
+
+
+
+  <!-- Pop up javascript form for login -->
+  <script>
+    // If user clicks anywhere outside of the modal, Modal will close
+    
+    var modal = document.getElementById('modal-login');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    
+    
+    
+    <!-- Pop up javascript form for Registration -->
+    <script>
+    // If user clicks anywhere outside of the modal, Modal will close
+    var modal = document.getElementById('modal-register');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+  </script>
+
+  
+<script>
+$(".toggle-password").click(function() {
+   $(this).toggleClass("fa-eye fa-eye-slash");
+   var input = $($(this).attr("toggle"));
+   if (input.attr("type") == "password") {
+     input.attr("type", "text");
+   } else {
+     input.attr("type", "password");
+   }
+});
+</script>
+
+
+<script>
+$(".toggle-password1").click(function() {
+   $(this).toggleClass("fa-eye fa-eye-slash");
+   var input = $($(this).attr("toggle"));
+   if (input.attr("type") == "password") {
+     input.attr("type", "text");
+   } else {
+     input.attr("type", "password");
+   }
+});
+
+</script>
+
+
+
+  
+
+
+
+
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Large collection of Computer Accessories </h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="./photos/lab7.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="./photos/lab2.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="./photos/lab3.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The 400 Blows</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="./photos/lab4.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Neptune</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="./photos/lab5.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Holden Caulfield</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="./photos/lab6.jpg">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">THE SUBTITLE</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Alper Kamu</h1>
+              <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    
+    
+    
+    
+  <section class="text-gray-600 body-font relative">
+    <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+      <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+        <iframe class="absolute inset-0" style="filter: grayscale(1) contrast(1.2) opacity(0.4);" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" width="100%" height="100%" frameborder="0"></iframe>
+        <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+          <div class="lg:w-1/2 px-6">
+            <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
+            <p class="mt-1">Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter</p>
+          </div>
+          <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
+            <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
+            <a class="text-blue-500 leading-relaxed">example@email.com</a>
+            <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
+            <p class="leading-relaxed">123-456-7890</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
+        <p class="leading-relaxed mb-5 text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
+        <div class="relative mb-4">
+          <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+          <input type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+          <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+          <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+          <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+          <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+        </div>
+        <button class="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Button</button>
+        <p class="text-xs text-gray-500 mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
+      </div>
+    </div>
+  </section>
+    
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">Testimonials</h1>
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 md:w-1/2 w-full">
+          <div class="h-full bg-gray-100 p-8 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+              <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+            </svg>
+            <p class="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
+            <a class="inline-flex items-center">
+              <img alt="testimonial" src="https://dummyimage.com/106x106" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+              <span class="flex-grow flex flex-col pl-4">
+                <span class="title-font font-medium text-gray-900">Holden Caulfield</span>
+                <span class="text-gray-500 text-sm">UI DEVELOPER</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/2 w-full">
+          <div class="h-full bg-gray-100 p-8 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+              <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+            </svg>
+            <p class="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.</p>
+            <a class="inline-flex items-center">
+              <img alt="testimonial" src="https://dummyimage.com/107x107" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+              <span class="flex-grow flex flex-col pl-4">
+                <span class="title-font font-medium text-gray-900">Alper Kamu</span>
+                <span class="text-gray-500 text-sm">DESIGNER</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-gray-600 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Internet Services Provider</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 Internet Services Provider
+
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+    
+</body>
+</html>

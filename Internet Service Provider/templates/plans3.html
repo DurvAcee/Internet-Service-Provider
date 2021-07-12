@@ -1,0 +1,501 @@
+<!doctype html>
+                        <html>
+                            <head>
+                                <meta charset='utf-8'>
+                                <meta name='viewport' content='width=device-width, initial-scale=1'>
+                                <title> Plans </title>
+                                <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+                                <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+                                <link href='' rel='stylesheet'>
+                                <style>.lis-bg-light {
+    background-color: #00000005
+}
+
+section {
+    padding-top: 6.25em;
+    padding-bottom: 6.25em;
+    position: relative
+}
+
+.pb-4,
+.py-4 {
+    padding-bottom: 1.5rem !important
+}
+
+h2 {
+    font-size: 2rem
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222222;
+    margin: 0 0 15px;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.75rem
+}
+
+.lis-light {
+    color: #707070
+}
+
+.font-weight-normal {
+    font-weight: 400 !important
+}
+
+h5 {
+    font-size: 1.25rem
+}
+
+.price-table {
+    -webkit-transition: 0.3s ease
+}
+
+.lis-brd-light {
+    border-color: #568cf6; !important
+}
+
+.lis-rounded-top {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px
+}
+
+.lis-bg-light {
+    background-color: #f7f7f7
+}
+
+.pb-4,
+.py-4 {
+    padding-bottom: 1.5rem !important
+}
+
+.lis-latter-spacing-2 {
+    letter-spacing: 2px
+}
+
+.text-uppercase {
+    text-transform: uppercase !important
+}
+
+.lis-font-weight-500 {
+    font-weight: 500
+}
+
+.display-4 {
+    font-size: 3.5rem
+}
+
+.price-table sup {
+    top: -1.5em
+}
+
+.price-table sup,
+.price-table small {
+    font-size: 1.25rem
+}
+
+.price-table small {
+    font-size: 1.25rem
+}
+
+.mb-0,
+.my-0 {
+    margin-bottom: 0 !important
+}
+
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0
+}
+
+.lis-brd-light {
+    border-color: #dadada !important
+}
+
+.bg-white {
+    background-color: #fff !important
+}
+
+.py-5 {
+    padding-bottom: 3rem !important
+}
+
+.lis-line-height-3 {
+    line-height: 3 !important
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none
+}
+
+.lis-line-height-3 {
+    line-height: 3 !important
+}
+
+.btn-primary-outline {
+    background-color: transparent;
+    color: #ff214f !important;
+    border-color: #ff214f
+}
+
+.btn {
+    color: #fff;
+    padding: .5rem 1.3rem;
+    font-size: 1rem;
+    word-wrap: break-word
+}
+
+.lis-rounded-circle-50 {
+    border-radius: 50px
+}
+
+.pl-2,
+.px-2 {
+    padding-right: .5rem !important
+}
+
+.btn-primary-outline:hover,
+.btn-primary-outline:focus {
+    background-color: #ff214f;
+    border-color: #ff214f;
+    color: #fff !important
+}
+
+.lis-bg-primary {
+    background-color: #ff214f
+}
+
+.btn-primary {
+    background-color: #ff214f;
+    border-color: #ff214f
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #ff214f;
+    border-color: #ff214f
+}
+
+.price-table.active {
+    transform: scale(1.045);
+    -webkit-transform: scale(1.045)
+}
+
+.price-table {
+    -webkit-transition: 0.3s ease
+}
+
+.lis-rounded-bottom {
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px
+}
+
+{% comment %} delete this {% endcomment %}
+    *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 26px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	font-size:16px;
+}
+
+/* Set a style for all buttons */
+
+button:hover {
+    opacity: 0.8;
+}
+h1{
+font-size: 34px;
+    font-family: inherit;
+    color: #999999;
+}
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+.avatar {
+    width: 200px;
+	height:200px;
+    border-radius: 50%;
+}
+
+/* The Modal (background) */
+.modal {
+	display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 40%; 
+	padding-bottom: 30px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #4f8ff7;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    animation: zoom 0.6s
+}
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+
+
+/* Drop Down menu */
+.dropCat1{  
+    padding-left: 27px;
+    font-size: larger;
+    color: #999999;
+}
+
+
+#category{
+    color: #616161;
+    font-size: larger;
+    margin-bottom: 17px;
+    margin-top: 15px;
+
+}
+
+
+.field-icon {
+    float: right;
+    margin-right: 40px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .container{
+    padding-top:50px;
+    margin: auto;
+  }
+
+  img.one {
+  height: 80%;
+  width: 85%;
+}
+
+.top-buffer { margin-top:20px; }
+
+
+</style>
+                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+                                <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+                                <script type='text/javascript'></script>
+                            </head>
+                            <body oncontextmenu='return false' class='snippet-body'>
+
+<header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Internet Service Provider </span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a href="/" class="mr-8 hover:text-gray-900">Home</a>
+        <a class="mr-8 hover:text-gray-900">Services</a>
+        <a class="mr-8 hover:text-gray-900">About Us</a>
+        <a class="mr-8  hover:text-gray-900">Contact Us</a>
+      </nav>
+      
+    </div>
+  </header>
+
+
+                            <section class="lis-bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 text-center">
+                <div class="heading pb-4">
+                    <h2 class = "text-primary"> <b> Choose Your Plan </b></h2>
+                    <h5 class="font-bold">Discover &amp; connect with top-rated local businesses</h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp mb-5 mb-lg-0 text-center" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="price-table">
+                    <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light">
+                        <h5 class="text-uppercase lis-latter-spacing-2">Basic</h5>
+                        <h1 class="display-4 lis-font-weight-500"><sup>₹</sup> 777 <small>/84 days</small></h1>
+                        <p class="mb-0">Prepaid Plan</p>
+                    </div>
+                    <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                        <ul class="list-unstyled lis-line-height-3">
+                            <li>Speed : 1.2 GB per day</li>
+                            <li>Validity : 84 days</li>
+                            <li>1 Year Disney+ Hotstar VIP Subscription</li>
+                            <li>Unlimited Voice Call</li>
+                            <li>Unlimited SMS (100/day)</li>
+                        </ul><a href="/checkout" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" data-abc="true"><i class="fa fa-shopping-cart pl-2"></i>Recharge Now</a>
+                    </div>  
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp mb-5 mb-lg-0 text-center" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="price-table active">
+                    <div class="price-header lis py-4 text-white lis-rounded-top" style="background-color: #568cf6;">
+                        <h5 class="text-uppercase lis-latter-spacing-2 text-white">Deluxe</h5>
+                        <h1 class="display-4 lis-font-weight-500 text-white"><sup>₹</sup> 2599 <small>/year</small></h1>
+                        <p class="mb-0">Prepaid Plan</p>
+                    </div>
+                    <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                        <b><ul class="list-unstyled lis-line-height-3">
+                            <li>Speed : 2 GB per day</li>
+                            <li>Validity : 365 days</li>
+                            <li>1 Year Netflix, Amazon Prime Subscription</li>
+                            <li>Unlimited Voice Call</li>
+                            <li>Unlimited SMS (100/day)</li>
+                        </ul></b> <a href="/checkout" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" data-abc="true"><i class="fa fa-shopping-cart pl-2"></i>Recharge Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp text-center" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="price-table">
+                    <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light">
+                        <h5 class="text-uppercase lis-latter-spacing-2">Premium</h5>
+                        <h1 class="display-4 lis-font-weight-500"><sup>₹</sup> 2121 <small>/year</small></h1>
+                        <p class="mb-0">Prepaid Plan</p>
+                    </div>
+                    <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                        <ul class="list-unstyled lis-line-height-3">
+                            <li>Speed : 1.5 GB per day</li>
+                            <li>Validity : 336 days</li>
+                            <li>1 Year Disney+ Hotstar VIP Subscription</li>
+                            <li>Unlimited Voice Call</li>
+                            <li>Unlimited SMS (100/day)</li>
+                        </ul> <a href="/checkout" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" data-abc="true"><i class="fa fa-shopping-cart pl-2"></i>Recharge Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<center>
+<div>
+<br/>
+<a href="/listplan" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" data-abc="true"><i class="fa fa-shopping-cart pl-2"></i>View All Plans</a>
+
+</div>
+<br/><br/><br/>
+<div>
+<h2 class = "text-primary"> <b> Jio Device Offers </b></h2>
+<h3 class = "font-medium">Multiple features packed into JioPhone. Engineered to experience the best.</h3>
+</div>
+<div class="myjio">
+<img src="/static/assets/img/jio.jpg" alt="">
+</div>
+<a href="https://www.jio.com/en-in/jiophone" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" data-abc="true"><i class="fa fa-shopping-cart pl-2"></i>Know More</a>
+</br>
+<br/>
+<div>
+<br/><br/>
+<h2 class = "text-primary"> <b> 
+JioFiber Accessories</b></h2>
+<h3 class = "font-medium">Enchance your JioFiber experience with Accessories.</h3><br/><br/><br/>
+</div>
+
+<div style="width:1000px;">
+  <div style="width:500px; float:left; background:rgb(240,240,240);"><h3 class="text-blue-900"><b>JioExtender</b></h3>
+  <img class = "one" src="/static/assets/img/jioext.jpg" alt="" width="500" height="500"><br/>
+  <h5 class = "font-bold">Enhances your WiFi Coverage area</h5>
+  <h3 class = "text-red-600">₹2499</h3>
+      <a href="/plan" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" data-abc="true"><i class="fa fa-shopping-cart pl-2"></i>Buy Now</a>
+      </div>
+
+  <div style="width:500px; float:right; background:rgb(240,240,240);"><h3 class="text-blue-900"><b>JioTVCamera</b></h3>
+  <img src="/static/assets/img/jiotv.jpg" alt="" ><br/>
+  <h5 class = "font-bold">Full screen video calls on TV</h5>
+  <h3 class = "text-red-600">₹2999</h3>
+  <a href="/plan" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" data-abc="true"><i class="fa fa-shopping-cart pl-2"></i>Buy Now</a>
+  
+  </div>
+  
+</div>
+<br/>
+
+</center>
+
+
+
+
+<footer class="text-gray-600 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Internet Service Provider</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 Broadband services —
+        <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Deep Trivedi</a>
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

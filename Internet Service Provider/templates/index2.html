@@ -1,0 +1,543 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="https://i.ibb.co/VQBWWR0/jiologo.webp" type="image/x-icon"/>
+
+  <title>Internet Service Provider</title>
+  <style>
+    *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 26px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	font-size:16px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4f8ff7;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 26px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+	font-size:20px;
+}
+button:hover {
+    opacity: 0.8;
+}
+h1{
+font-size: 34px;
+    font-family: inherit;
+    color: #999999;
+}
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+.avatar {
+    width: 200px;
+	height:200px;
+    border-radius: 50%;
+}
+
+/* The Modal (background) */
+.modal {
+	display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 40%; 
+	padding-bottom: 30px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #4f8ff7;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    animation: zoom 0.6s
+}
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+
+
+/* Drop Down menu */
+.dropCat1{  
+    padding-left: 27px;
+    font-size: larger;
+    color: #999999;
+}
+
+
+#category{
+    color: #616161;
+    font-size: larger;
+    margin-bottom: 17px;
+    margin-top: 15px;
+
+}
+
+
+.field-icon {
+    float: right;
+    margin-right: 40px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .container{
+    padding-top:50px;
+    margin: auto;
+  }
+
+
+</style>
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<body onload="javascript:myfun()">
+
+<script type="text/javascript">
+{% comment %} function myFunction() {
+  alert("Registration Successful!");
+} {% endcomment %}
+
+{% comment %} function myFunction2() {
+    alert("You'll be redirected to another page, if not type the correct email and password again!")
+} {% endcomment %}
+
+{% comment %} function showAlert(){
+  if($("#myAlert").find("div#myAlert2").length==0){
+    $("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button> Success! message sent successfully.</div>");
+  }
+  $("#myAlert").css("display", "");
+}  {% endcomment %}
+
+function myfun(){
+var name = "signup" + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  var res="";
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      res= c.substring(name.length, c.length);
+    }
+  }
+  if (res=="0"){
+    alert("The email is already used ..please try again")
+    document.cookie = "signup=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+  if (res=="1"){
+    alert("Registered successfully")
+    document.cookie = "signup=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+  if (res=="2"){
+    alert("Login failed ..wrong username or password")
+    document.cookie = "signup=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }}
+  myfun()
+</script>
+
+
+
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Internet Service Provider </span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a href="/" class="mr-8 hover:text-gray-900">Home</a>
+        <a class="mr-8 hover:text-gray-900">Services</a>
+        <a class="mr-8 hover:text-gray-900">About Us</a>
+        <a class="mr-8  hover:text-gray-900">Contact Us</a>
+      </nav>
+      
+    </div>
+  </header>
+
+
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Find the best wifi plans 
+        <br class="hidden lg:inline-block">with best offers
+      </h1>
+      <p class="mb-8 leading-relaxed">Here you will find best wifi plan and you can explore more on it. Due to work from internet has become a major concern and demand of the internet is also very high, here we recomand you best wifi plan for your better internet connectivity </p>
+      <div class="flex justify-center">
+        <button onclick="document.getElementById('modal-login').style.display='block'" class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Login</button>
+        <button onclick="document.getElementById('modal-register').style.display='block'" class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Register</button>
+      </div>
+    </div>
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded" alt="hero" src="https://source.unsplash.com/720x600/?wifi">   
+        <!-- <img class="object-cover object-center rounded" alt="hero" src="./photos/comp1.jpg"> -->
+        <!-- <video width="320" height="240" autoplay loop>
+      <source src="./videos/repairing1.mp4" type="video/mp4">
+     </video>   -->
+    </div>
+  </div>
+
+  <!-- PopUp form for login form -->
+  <div id="modal-login" class="modal">
+  
+    <form class="modal-content animate" method="post" action="/login">
+    {% csrf_token %} 
+
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('modal-login').style.display='none'" class="close" title="Close PopUp">&times;</span>
+        <h1 style="text-align:center">LogIn</h1>
+      </div>
+  
+      <div class="container">
+        <input type="text" placeholder="Enter email" name="email" required>
+        <input id="password-field1" placeholder="Enter Password" type="password"  class="form-control" name="password" required>
+        <span toggle="#password-field1" class="fa fa-lg fa-eye field-icon toggle-password1"></span>        
+        <button type="submit" name="loginBtn">Login</button>
+        <input type="checkbox" style="margin:26px 30px;"> Remember me      
+        <!--<a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a> -->
+          
+      </div>
+
+    </form>
+    
+  </div>
+
+<!-- PopUp form for Registration  form -->
+<div id="modal-register" class="modal">
+  <form class="modal-content animate" method="post" action="/home">
+  {% csrf_token %} 
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('modal-register').style.display='none'" class="close" title="Close PopUp">&times;</span>
+      <h1 style="text-align:center">Registration</h1>
+    </div>
+
+    <div class="container">
+      <input type="text" placeholder="Enter Name" name="name" required>
+      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="text" placeholder="Enter Mobile" name="mobile" required>
+      
+      <!-- <input type="password" id="password" placeholder="Enter Password" name="psw" required>    
+      <i class="far fa-eye" id="togglePassword"></i> -->
+
+      <input id="password-field" placeholder="Enter Password" type="password"  class="form-control" name="password" required>
+      <span toggle="#password-field" class="fa fa-lg fa-eye field-icon toggle-password"></span>
+  
+            
+    
+  
+  </select>
+      <button type="submit" onclick="myFunction()" name="reg" >Register</button>
+      
+      
+    </div>
+    
+  </form>
+  
+</div>
+
+
+
+
+  <!-- Pop up javascript form for login -->
+  <script>
+    // If user clicks anywhere outside of the modal, Modal will close
+    
+    var modal = document.getElementById('modal-login');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    
+    
+    
+    <!-- Pop up javascript form for Registration -->
+    <script>
+    // If user clicks anywhere outside of the modal, Modal will close
+    var modal = document.getElementById('modal-register');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+  </script>
+
+  
+<script>
+$(".toggle-password").click(function() {
+   $(this).toggleClass("fa-eye fa-eye-slash");
+   var input = $($(this).attr("toggle"));
+   if (input.attr("type") == "password") {
+     input.attr("type", "text");
+   } else {
+     input.attr("type", "password");
+   }
+});
+</script>
+
+
+<script>
+$(".toggle-password1").click(function() {
+   $(this).toggleClass("fa-eye fa-eye-slash");
+   var input = $($(this).attr("toggle"));
+   if (input.attr("type") == "password") {
+     input.attr("type", "text");
+   } else {
+     input.attr("type", "password");
+   }
+});
+
+</script>
+
+
+
+  
+
+
+
+
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Services</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">We have huge collection of wifi plans through which you can purchase it and enjoy internet speed </p>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://images.pexels.com/photos/4218546/pexels-photo-4218546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">Wifi router</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Wifi Router</h1>
+              <p class="leading-relaxed">Look at any router and you will quickly see that there are a number of different networks available.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://images.pexels.com/photos/2881232/pexels-photo-2881232.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">Wifi router</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Wifi router</h1>
+              <p class="leading-relaxed">Look at any router and you will quickly see that there are a number of different networks available.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">Social Media</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Easily download all the apps</h1>
+              <p class="leading-relaxed">Download all the app with single click and enjoy all social media platform  through high speed internet</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://images.pexels.com/photos/4114774/pexels-photo-4114774.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">Speed Test</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Speed Test</h1>
+              <p class="leading-relaxed">Test your Internet connection bandwidth to locations around the world with this interactive broadband speed test from Ookla.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://images.pexels.com/photos/6348140/pexels-photo-6348140.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">Work from home</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Work from home</h1>
+              <p class="leading-relaxed"> Many organizations transitioned their employees from the office to a work from home model during the Coronavirus global pandemic. </p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative">
+            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://images.pexels.com/photos/987586/pexels-photo-987586.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+            <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+              <h2 class="tracking-widest text-sm title-font font-medium text-blue-500 mb-1">OTT</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">OTT Platform advantages</h1>
+              <p class="leading-relaxed"> These include Amazon Prime, Disney Hotstar, Netflix, Jio Cinema, JioSaavn, ShemarooMe, Sony Liv, Voot, Zee 5, Alt Balaji, Lions Gate, Sun NXT, and Hoichoi. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    
+    
+    
+    
+  <section class="text-gray-600 body-font relative">
+    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900" style="text-align: center;">Feedbacks</h1>
+    <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+      
+      <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+        <iframe class="absolute inset-0" style="filter: grayscale(1) contrast(1.2) opacity(0.4);" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242118.14199917082!2d73.72287827306845!3d18.524564857810876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1619156447675!5m2!1sen!2sin" width="100%" height="100%" frameborder="0"></iframe>
+        <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+          <div class="lg:w-1/2 px-6">
+            <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
+            <p class="mt-1">Broadband Service lmt., 2B shivalik complex, Narhe, Pune </p>
+          </div>
+          <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
+            <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
+            <a class="text-blue-500 leading-relaxed">broadbandservices@gmail.com</a>
+            <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
+            <p class="leading-relaxed">123-456-7890</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
+        <p class="leading-relaxed mb-5 text-gray-600">Write your feedback in the form given below</p>
+        <div class="relative mb-4">
+          <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+          <input type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"  style="margin-left: 0px;">
+        </div>
+        <div class="relative mb-4">
+          <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+          <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+          <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+          <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+        </div>
+        <button class="text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Submit</button>
+        <p class="text-xs text-gray-500 mt-3">By clicking the above  button  feedback will be automatically submitted.</p>
+      </div>
+    </div>
+  </section>
+    
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">Testimonials</h1>
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 md:w-1/2 w-full">
+          <div class="h-full bg-gray-100 p-8 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+              <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+            </svg>
+            <p class="leading-relaxed mb-6">This is website that i have ever used it display all the plans in  easy and better way. It will be very useful for using best internet plans</p>
+            <a class="inline-flex items-center">
+              <img alt="testimonial" src="data:image/png;base64,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" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+              <span class="flex-grow flex flex-col pl-4">
+                <span class="title-font font-medium text-gray-900">Deep Trivedi</span>
+                <span class="text-gray-500 text-sm">USER</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/2 w-full">
+          <div class="h-full bg-gray-100 p-8 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+              <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+            </svg>
+            <p class="leading-relaxed mb-6">It is better and safe website to use it, also the payment gateway is safe i have used it and i can it is safe.</p>
+            <a class="inline-flex items-center">
+              <img alt="testimonial" src="data:image/jpeg;base64,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" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+              <span class="flex-grow flex flex-col pl-4">
+                <span class="title-font font-medium text-gray-900">Durvesh Danve</span>
+                <span class="text-gray-500 text-sm">USER</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-gray-600 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="ml-3 text-xl">Internet Service Provider</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 Broadband services —
+        <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Deep Trivedi</a>
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+    
+</body>
+</html>
